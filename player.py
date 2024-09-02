@@ -9,3 +9,7 @@ class Player(Turtle):
         self.penup()
         self.setheading(90)
         self.goto(x=0, y=-280)
+
+    def move_up(self):
+        new_y = self.ycor() + 20
+        self.goto(x=0, y=new_y)
