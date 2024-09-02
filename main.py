@@ -23,8 +23,15 @@ while game_is_on:
     cars.spawn_cars()
     cars.move()
 
-    if player.ycor() > 290:
+    # detect the "finish line"
+    if player.ycor() > 250:
         player.respawn()
+        cars.next_level()
 
+    # detect collision with a car
+    for car in cars.cars:
+        if player.distance(car) < 20:
+            game_is_on = False
+            scoreboard.game_over()
 
 screen.exitonclick()
