@@ -27,6 +27,7 @@ while game_is_on:
     if player.ycor() > 250:
         player.respawn()
         cars.next_level()
+        scoreboard.increase_score()
 
     # detect collision with a car
     for car in cars.cars:
