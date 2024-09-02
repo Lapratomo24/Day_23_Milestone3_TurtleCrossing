@@ -19,6 +19,12 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+
+    cars.spawn_cars()
     cars.move()
+
+    if player.ycor() > 290:
+        player.respawn()
+
 
 screen.exitonclick()
